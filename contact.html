@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./assets/oklahoma/Seal_of_Oklahoma.svg" type="image/x-icon">
+    <title>Contact Us</title>
+</head>
+<body>
+    <!-- started 7/31 4:15 PM -->
+    <!-- complete 7/31 4:15 PM -->
+    <nav class="nav">
+        <div class="nav-side">
+            <img src="./assets/oklahoma/Seal_of_Oklahoma.svg" alt="State state-seal of Oklahoma" class="state-seal">
+            <a href="./index.html" class="nav-link">Oklahoma</a>
+        </div>
+        <div class="nav-side">
+            <a href="./contact.html" class="nav-link">Questions</a>
+            <div class="dropdown">
+                <button class="dropdown-btn">&#9662;</button>
+                <div class="dropdown-content">
+                    <a href="./cities/okc.html" class="nav-link">OKC</a>
+                    <a href="./cities/tulsa.html" class="nav-link">Tulsa</a>
+                    <a href="./cities/norman.html" class="nav-link">Norman</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Started 7/31 4:15 PM -->
+    <!-- Finished 7/31 4:30 PM -->
+    <header class="header">
+        <h1>Contact Us</h1>
+        <p>Have questions or want to request other information?</p>
+        <p>Submit the form or use one of the methods in the contact information below!</p>
+    </header>
+    <div class="content-container">
+        <!-- Started 7/31 4:14 PM -->
+        <!-- Finished  -->
+        <section class="section">
+            <div id="successToast" class="toast" style="display: none">Your question has been successfully submitted. Please check your email regularly for a response.</div>
+            <div class="contact-layout">
+                <img src="./assets/oklahoma/Seal_of_Oklahoma.svg" alt="Oklahoma State Capitol Building" class="flag">
+                <form class="form" id="contactForm">
+                    <h2>Ask a Question</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input id="firstName" name="firstName" type="text" placeholder="John" required minLength="2" maxlength="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input id="lastName" name="lastName" type="text" placeholder="Doe" required minLength="2" maxlength="100">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" placeholder="john.doe@example.com" required minLength="7" maxlength="255">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmEmail">Confirm Email</label>
+                            <input id="confirmEmail" name="confirmEmail" type="email" placeholder="john.doe@example.com" required minLength="7" maxlength="255">
+                        </div>
+                    </div>
+                    <div id="errorMessage" class="error-message" style="display: none">Emails do not match!</div>
+                    <div class="form-group">
+                        <label for="question">Question</label>
+                        <textarea id="question" name="question" type="text" placeholder="Type your question here..." required maxlength="300"></textarea>
+                    </div>
+                    <button type="submit" class="btn" id="submitBtn">Submit</button>
+                </form>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        let form = document.getElementById('contactForm');
+                        let firstName = document.getElementById('firstName');
+                        let lastName = document.getElementById('lastName');
+                        let email = document.getElementById('email');
+                        let confirmEmail = document.getElementById('confirmEmail');
+                        let question = document.getElementById('question');
+                        let btn = document.getElementById('submitBtn');
+
+                        let errorMessage = document.getElementById('errorMessage');
+                        let successToast = document.getElementById('successToast');
+
+                        function checkFormValidity() {
+                            submitBtn.disabled = !form.checkValidity() || email.value !== confirmEmail.value;
+                        }
+
+                        function checkEmailMatch() {
+                            if (email.value !== confirmEmail.value) {
+                                errorMessage.style.display = 'block';
+                                submitBtn.disabled = true;
+                            } else {
+                                errorMessage.style.display = 'none';
+                                submitBtn.disabled = !form.checkValidity();
+                            }
+                        }
+
+                        email.addEventListener('input', checkEmailMatch);
+                        confirmEmail.addEventListener('input', checkEmailMatch);
+                        firstName.addEventListener('input', checkFormValidity);
+                        lastName.addEventListener('input', checkFormValidity);
+                        question.addEventListener('input', checkFormValidity);
+
+                        form.addEventListener('submit', function(event) {
+                            event.preventDefault();
+                            if (!form.checkValidity() || email.value !== confirmEmail.value) {
+                                return;
+                            }
+                            email.value = '';
+                            confirmEmail.value = '';
+                            firstName.value = '';
+                            lastName.value = '';
+                            question.value = '';
+                            successToast.style.display = 'block';
+                            setTimeout(function() {
+                                successToast.style.display = 'none';
+                            }, 5000);
+                        });
+                    });
+                </script>
+            </div>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3088.9919788188216!2d-97.51455148463757!3d35.46756008067233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b1c4c6d28f9e6d%3A0x200af1fa9ddc4e0!2s123%20Park%20Ave%2C%20Oklahoma%20City%2C%20OK%2073102!5e0!3m2!1sen!2sus!4v1628964843583!5m2!1sen!2sus"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+        <!-- Started 7/31 4:15 PM -->
+        <!-- Finished  -->
+        <aside class="aside">
+            <h2>Contact Information</h2>
+            <ul>
+                <li>Phone: (405) 297-8912</li>
+                <li>Toll-free: (800) 225-5652</li>
+                <li>Fax: (405) 297-8888</li>
+                <li>Email: <a href="mailto:contact@visitokc.com">contact@visitokc.com</a></li>
+                <li>123 Park Ave, Oklahoma City, OK, 73102</li>
+            </ul>
+        </aside>
+    </div>
+</body>
+</html>
