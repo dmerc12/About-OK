@@ -231,14 +231,14 @@ body {
     text-align: center;
 }
 
-.aside ul {
+.aside ul, .aside ol{
     list-style-type: none;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-.aside ul li {
+.aside ul li, .aside ol li {
     margin-bottom: 10px;
 }
 
