@@ -37,37 +37,37 @@
         <!-- Started 7/31 4:15 PM -->
         <!-- Finished 7/31 6:30 PM -->
         <section class="section">
-            <div id="successToast" class="toast" style="display: none">Your question has been successfully submitted. Please check your email regularly for a response.</div>
+            <div id="successToast" class="toast" style="display: none">Your inquiry has been successfully sent.</div>
             <div class="contact-layout">
                 <img src="./assets/oklahoma/Seal_of_Oklahoma.svg" alt="Oklahoma State Capitol Building" class="flag">
                 <form class="form" id="contactForm">
-                    <h2>Ask a Question</h2>
+                    <h2>Submit Your Inquiry</h2>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input id="firstName" name="firstName" type="text" placeholder="John" required minLength="2" maxlength="100">
+                            <label for="firstName">Please Enter Your First Name</label>
+                            <input id="firstName" name="firstName" type="text" placeholder="e.g., John" required minLength="2" maxlength="100">
                         </div>
                         <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input id="lastName" name="lastName" type="text" placeholder="Doe" required minLength="2" maxlength="100">
+                            <label for="lastName">Please Enter Your Last Name</label>
+                            <input id="lastName" name="lastName" type="text" placeholder="e.g., Doe" required minLength="2" maxlength="100">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="email" placeholder="john.doe@example.com" required minLength="7" maxlength="255">
+                            <label for="email">Please Enter Your Email Address</label>
+                            <input id="email" name="email" type="email" placeholder="e.g., john.doe@example.com" required minLength="7" maxlength="255">
                         </div>
                         <div class="form-group">
-                            <label for="confirmEmail">Confirm Email</label>
-                            <input id="confirmEmail" name="confirmEmail" type="email" placeholder="john.doe@example.com" required minLength="7" maxlength="255">
+                            <label for="confirmEmail">Please Confirm Email Address</label>
+                            <input id="confirmEmail" name="confirmEmail" type="email" placeholder="Re-enter your email" required minLength="7" maxlength="255">
                         </div>
                     </div>
-                    <div id="errorMessage" class="error-message" style="display: none">Emails do not match!</div>
+                    <div id="errorMessage" class="error-message" style="display: none">The emails you entered do not match!</div>
                     <div class="form-group">
-                        <label for="question">Question</label>
-                        <textarea id="question" name="question" type="text" placeholder="Type your question here..." required maxlength="300"></textarea>
+                        <label for="question">Please Enter Your Question</label>
+                        <textarea id="question" name="question" type="text" placeholder="Enter your question here..." required maxlength="300"></textarea>
                     </div>
-                    <button type="submit" class="btn" id="submitBtn">Submit</button>
+                    <button type="submit" class="btn" id="submitBtn">Send</button>
                 </form>
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
