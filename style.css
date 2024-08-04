@@ -113,8 +113,8 @@ body {
 }
 
 .section h2 {
-    margin: 10px 10px 0 0;
-    padding: 20px 20px 0 0;
+    margin-bottom: 10px;
+    padding: 20px;
     text-align: center;
     width: 100%;
     display: block;
